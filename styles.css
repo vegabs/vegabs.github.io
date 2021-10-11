@@ -16,7 +16,7 @@ body,
 }
 
 body {
-  background-image: url(bgimg.jpg);
+  background-image: url(bgimg-min.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
