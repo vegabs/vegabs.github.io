@@ -1,0 +1,101 @@
+:root {
+  --main-color: #dfd9dd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#st-full-pg {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  background-image: url(bgimg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  width: 80%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--main-color);
+}
+
+.main_header {
+  padding: 6px 15px;
+  border-bottom: 1px solid;
+  border-color: var(--main-color);
+}
+
+.main_body {
+  height: 76vh;
+  padding: 6px 15px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.main_footer {
+  padding: 6px 15px;
+  border-top: 1px solid;
+  border-color: var(--main-color);
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--main-color);
+  margin-right: 10px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 300;
+  font-size: 100px;
+  line-height: 100px;
+  color: var(--main-color);
+}
+
+/* If the screen size is 601px or more, set the font-size of <div> to 80px */
+@media only screen and (min-width: 701px) {
+  h1 {
+    font-size: 100px;
+    line-height: 100px;
+  }
+}
+
+/* If the screen size is 600px or less, set the font-size of <div> to 30px */
+@media only screen and (max-width: 700px) {
+  h1 {
+    font-size: 52px;
+    line-height: 52px;
+  }
+}
+
+.main_body_about{
+    width: 45%;
+    padding: 20px 0px;
+    /* background-color: red; */
+}
+
+.main_body_about_text {
+    margin-bottom: 30px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    font-size: 19px;
+    color: var(--main-color);
+}
