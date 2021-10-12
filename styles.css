@@ -51,7 +51,7 @@ body {
   border-color: var(--main-color);
 }
 
-a {
+.main_header a, .main_footer a { 
   text-decoration: none;
   text-transform: uppercase;
   color: var(--main-color);
@@ -73,7 +73,7 @@ h1 {
 
 .main_body_about{
     width: 60%;
-    padding: 20px 0px;
+    padding: 0px 0px;
     /* background-color: red; */
 }
 
@@ -82,6 +82,10 @@ h1 {
     font-family: 'Work Sans', sans-serif;
     font-weight: 300;
     font-size: 19px;
+    color: var(--main-color);
+}
+
+.main_body_about_text a{
     color: var(--main-color);
 }
 
@@ -103,6 +107,6 @@ h1 {
         width: 98%;
     }
     .main_body_about_text {
-        font-size: 16px;
+        font-size: 15px;
     }
   }
