@@ -265,3 +265,18 @@ hr {
     height: 140px;
   }
 }
+
+/* Footer image responsive styles */
+footer img[alt="Footer background"] {
+  max-width: 40%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 800px) {
+  footer img[alt="Footer background"] {
+    max-width: 90%;
+  }
+}
