@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
+
+:root {
+  --bg:           #ffffff;
+  --text-main:    #000000;
+  --text-muted:   #444444;
+  --text-light:   #767676;
+  --border-color: #000000;
+  --red:          #0011ff;   /* the one permitted accent */
+
+  --font-family:  'Chakra Petch', sans-serif;
+  --font-heading: var(--font-family);
+  --font-body:    var(--font-family);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 2rem 1.5rem 0 1.5rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.container > p {
+  max-width: none;
+}
+
+.container ul li,
+.container ul li p {
+  max-width: none;
+}
+
+/* ── Headings ────────────────────────────────────────────── */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+  text-transform: none;
+}
+
+h1 {
+  font-size: 4rem;
+  line-height: 0.98;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-top: 5rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0;
+  letter-spacing: 0.02em;
+}
+
+/* Section numbering — classic Swiss grid labeling */
+h2::before {
+  content: attr(data-num);
+  color: var(--red);
+  margin-right: 0.75rem;
+  font-weight: 700;
+}
+
+/* ── Paragraphs & Lists ──────────────────────────────────── */
+p, li {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+  font-family: var(--font-body);
+  max-width: 640px;          /* Swiss grids cap line length for readability */
+}
+
+ul {
+  margin-left: 0;
+  margin-bottom: 2rem;
+  list-style: none;
+}
+
+ul li {
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+ul li::before {
+  content: '+';
+  position: absolute;
+  left: 0;
+  color: var(--red);
+}
+
+/* ── Links ───────────────────────────────────────────────── */
+a {
+  color: var(--text-main);
+  text-decoration: none;
+  border-bottom: 1px solid var(--text-main);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+a:hover {
+  color: var(--red);
+  border-color: var(--red);
+}
+
+/* ── Standard Hero ──────────────────────────────────────────
+   Asymmetric grid: photo in a fixed left column, text fills
+   the rest. No centering — Swiss design is never centered.
+*/
+.hero {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 0 3rem;
+  align-items: start;
+  margin-bottom: 5rem;
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+}
+
+.hero-photo {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 0;             /* square — no soft shapes in Swiss design */
+  border: none;
+  filter: grayscale(100%) contrast(1.1);  /* Swiss photography is often B&W */
+}
+
+.hero-text {
+  max-width: none;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  font-family: var(--font-heading);
+}
+
+.hero-text p {
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  max-width: 480px;
+}
+
+.hero-links {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.hero-links a {
+  display: inline-block;
+  margin-right: 0;
+  padding: 0.5rem 1rem;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid var(--text-main);
+  border-bottom: 1px solid var(--text-main);
+  margin-bottom: -1px;
+  margin-right: -1px;          /* shared borders, no double-thickness */
+}
+
+.hero-links a:hover {
+  background: var(--text-main);
+  color: var(--bg);
+  border-color: var(--text-main);
+}
+
+/* ── Fullpage Hero ───────────────────────────────────────── 
+   Swiss posters are never centered — content sits on a strict
+   baseline grid, left-aligned, often bottom-anchored.
+*/
+.fullpage-hero {
+  height: 100vh;
+  background-color: var(--bg);
+  color: var(--text-main);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 3rem;
+}
+
+.hero-inner {
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.fullpage-hero .hero-photo {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 0;
+  border: none;
+  filter: grayscale(100%) contrast(1.1);
+  margin-bottom: 2rem;
+}
+
+.fullpage-hero h1 {
+  font-size: clamp(3rem, 9vw, 6rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-heading);
+  line-height: 0.95;
+}
+
+.fullpage-hero p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin: 0.3rem 0;
+  font-family: var(--font-body);
+  max-width: 500px;
+}
+
+.hero-links {
+  margin-top: 2rem;
+}
+
+.fullpage-hero .hero-links a {
+  border-bottom: 1px solid var(--text-main);
+}
+
+.fullpage-hero .hero-links a:hover {
+  background: var(--red);
+  color: var(--bg);
+  border-color: var(--red);
+}
+
+.scroll-down {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  font-family: var(--font-family);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  animation: bounce 5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(5px); }
+}
+
+/* ── Publications — grid table, Swiss-style data presentation */
+table {
+  width: 100%;
+  margin-top: 1.5rem;
+  border-collapse: collapse;
+}
+
+td {
+  vertical-align: top;
+  padding: 1.5rem 0;
+}
+
+.pub-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  color: var(--text-main);
+  font-family: var(--font-heading);
+  letter-spacing: 0.01em;
+}
+
+.pub-image {
+  width: 120px;
+  margin-right: 1.5rem;
+  border-radius: 0;
+  filter: grayscale(100%) contrast(1.1);
+}
+
+.align-right {
+  text-align: right;
+  margin-top: 2rem;
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+footer {
+  padding-top: 2rem;
+  margin-top: 5rem;
+}
+
+footer p {
+  max-width: none;
+  text-align: center;
+  font-family: var(--font-family);
+  font-weight: 300;
+}
+
+footer img[alt="Footer background"] {
+  max-width: 40%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  filter: grayscale(100%);
+}
+
+/* ── Responsive Design ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+  }
+
+  .hero-photo {
+    width: 160px;
+    height: 160px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .fullpage-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-photo {
+    width: 120px;
+    height: 120px;
+  }
+
+  footer img[alt="Footer background"] {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 800px) {
+  footer img[alt="Footer background"] {
+    max-width: 90%;
+  }
+}
