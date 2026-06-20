@@ -1,0 +1,30 @@
+[
+    {
+        "title": "VibroLink: A Wireless Vibro-Auditory Transmission System to Improve Situational Awareness During EVA",
+        "author": "Gabriela Vega and Paul Strohmeier",
+        "venue published": "SpaceCHI 2025",
+        "url": "https://drops.dagstuhl.de/storage/01oasics/oasics-vol130-spacechi2025/OASIcs.SpaceCHI.2025.5/OASIcs.SpaceCHI.2025.5.pdf",
+        "image": "projects/img_space.png"
+    },
+    {
+        "title": "vARitouch: Back of the Finger Device for Adding Variable Compliance to Rigid Objects",
+        "author": "Gabriela Vega, Valentin Martinez-Missir, Dennis Wittchen, Nihar Sabnis, Audrey Girouard, Karen Anne Cochrane, Paul Strohmeier",
+        "venue published": "ACM CHI 2024",
+        "url": "https://dl.acm.org/doi/10.1145/3613904.3642828",
+        "image": "projects/img_varitouch.png"
+    },
+    {
+        "title": "HapticThings: Tangibles to Deliver Grain-Based Vibrotactile Compliance Illusion",
+        "author": "Valentin Martinez-Missir, Gabriela Vega, Easa AliAbbasi, and Paul Strohmeier",
+        "venue published": "Work in progress",
+        "url": "#",
+        "image": "projects/img_tangibles.jpg"
+    },
+    {
+        "title": "BioDermis: Exploring the capabilities of self-contained bioplastics patches for ubiquitous computing",
+        "author": "Gabriela Vega and Erik Peralta (equal contribution)",
+        "venue published": "Semester project at Saarland University",
+        "url": "#",
+        "image": "projects/img_bio.jpg"
+    }
+]

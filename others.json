@@ -1,0 +1,30 @@
+[
+    {
+        "title": "Physical Compliance and the Compliance Illusion: The Importance of Action for Perception",
+        "author": "Easa AliAbbassi, Gabriela Vega, Dennis Wittchen, Paul Strohmeier",
+        "venue published": "IEEE World Haptics 2025",
+        "url": "#",
+        "image": "projects/img_bio.jpg"
+    },
+    {
+        "title": "Sensorimotor Devices: Coupling Sensing and Actuation to Augment Bodily Experience",
+        "author": "Paul Strohmeier, Laia Turmo Vidal, Gabriela Vega, Courtney N Reed, Alex Mazursky, Easa AliAbbassi, Ana Tajadura-Jiménez, Jürgen Steimle",
+        "venue published": "ACM CHI EA 2025 (Extended Abstracts)",
+        "url": "https://dl.acm.org/doi/10.1145/3706599.3706735",
+        "image": "projects/img_space.png"
+    },
+    {
+        "title": "Tactile Symbols with Continuous and Motion-Coupled Vibration: An Exploration of Using Embodied Experiences for Hermeneutic Design",
+        "author": "Nihar Sabnis, Dennis Wittchen, Gabriela Vega, Courtney N Reed, Paul Strohmeier",
+        "venue published": "ACM CHI 2023",
+        "url": "https://dl.acm.org/doi/10.1145/3544548.3581356",
+        "image": "image/chi2023.png"
+    },
+    {
+        "title": "PURRtentio: Implementing a Smart Litter Box for Feline Urinalysis with Electrochemical Biosensors",
+        "author": "Shuyi Sun, Gabriela Vega, Erkin Seker, Krystle Reagan, Katia Vega",
+        "venue published": "ACM UIST Adjunct 2023",
+        "url": "https://dl.acm.org/doi/10.1145/3586182.3615820",
+        "image": "image/uist2023.png"
+    }
+]

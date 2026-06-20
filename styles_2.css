@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
 
 :root {
-  --bg:           #ffffff;
-  --text-main:    #000000;
-  --text-muted:   #444444;
-  --text-light:   #767676;
+  --bg: #ffffff;
+  --text-main: #000000;
+  --text-muted: #444444;
+  --text-light: #767676;
   --border-color: #000000;
-  --red:          #0011ff;   /* the one permitted accent */
+  --red: #0011ff;
+  /* the one permitted accent */
 
-  --font-family:  'Chakra Petch', sans-serif;
+  --font-family: 'Chakra Petch', sans-serif;
   --font-heading: var(--font-family);
-  --font-body:    var(--font-family);
+  --font-body: var(--font-family);
 }
 
 * {
@@ -39,7 +40,7 @@ body {
   margin: 0 auto;
 }
 
-.container > p {
+.container>p {
   max-width: none;
 }
 
@@ -49,7 +50,10 @@ body {
 }
 
 /* ── Headings ────────────────────────────────────────────── */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-heading);
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -81,13 +85,15 @@ h2::before {
 }
 
 /* ── Paragraphs & Lists ──────────────────────────────────── */
-p, li {
+p,
+li {
   font-size: 1rem;
   font-weight: 400;
   color: var(--text-muted);
   margin-bottom: 0.6rem;
   font-family: var(--font-body);
-  max-width: 640px;          /* Swiss grids cap line length for readability */
+  max-width: 640px;
+  /* Swiss grids cap line length for readability */
 }
 
 ul {
@@ -139,9 +145,11 @@ a:hover {
   width: 220px;
   height: 220px;
   object-fit: cover;
-  border-radius: 0;             /* square — no soft shapes in Swiss design */
+  border-radius: 0;
+  /* square — no soft shapes in Swiss design */
   border: none;
-  filter: grayscale(100%) contrast(1.1);  /* Swiss photography is often B&W */
+  filter: grayscale(100%) contrast(1.1);
+  /* Swiss photography is often B&W */
 }
 
 .hero-text {
@@ -180,10 +188,33 @@ a:hover {
   border: 1px solid var(--text-main);
   border-bottom: 1px solid var(--text-main);
   margin-bottom: -1px;
-  margin-right: -1px;          /* shared borders, no double-thickness */
+  margin-right: -1px;
+  /* shared borders, no double-thickness */
 }
 
 .hero-links a:hover {
+  background: var(--text-main);
+  color: var(--bg);
+  border-color: var(--text-main);
+}
+
+.publication-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid var(--text-main);
+  border-bottom: 1px solid var(--text-main);
+  text-decoration: none;
+  color: var(--text-main);
+  margin-bottom: 0;
+}
+
+.publication-link:hover {
   background: var(--text-main);
   color: var(--bg);
   border-color: var(--text-main);
@@ -265,8 +296,15 @@ a:hover {
 }
 
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(5px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(5px);
+  }
 }
 
 /* ── Publications — grid table, Swiss-style data presentation */
@@ -274,27 +312,72 @@ table {
   width: 100%;
   margin-top: 1.5rem;
   border-collapse: collapse;
+  border-spacing: 0;
+  display: block;
+}
+
+.container table {
+  width: calc(100% + 3rem);
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
+
+tr {
+  display: block;
+  margin-bottom: 2rem;
 }
 
 td {
+  display: block;
+  width: 100%;
   vertical-align: top;
-  padding: 1.5rem 0;
+  padding: 0;
+  margin: 0;
+}
+
+tr>td:nth-child(2) {
+  padding: 0 1.5rem;
 }
 
 .pub-title {
   font-weight: 600;
   font-size: 1.1rem;
-  margin-bottom: 0.3rem;
+  margin: 0 0 0.75rem;
   color: var(--text-main);
   font-family: var(--font-heading);
   letter-spacing: 0.01em;
 }
 
 .pub-image {
-  width: 120px;
-  margin-right: 1.5rem;
+  width: calc(100% + 3rem);
+  max-width: none;
+  height: auto;
+  margin: 0 0 1rem;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
   border-radius: 0;
-  filter: grayscale(100%) contrast(1.1);
+  filter: none;
+  display: block;
+  object-fit: cover;
+}
+
+.publication {
+  width: calc(100% + 3rem);
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
+
+.publication .pub-content {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.publication p {
+  margin-bottom: 0.5rem;
+}
+
+.pub-image,
+.pub-image img {
+  display: block;
 }
 
 .align-right {
