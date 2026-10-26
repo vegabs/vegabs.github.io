@@ -1,5 +1,13 @@
 [
     {
+        "title": "Faster Than Muscle",
+        "author": "Gabriela Vega, Johanna K. Didion, Reshma Ann Daniel, Nihar Sabnis, Daisuke Tajima, Shunichi Kasahara†, and Paul Strohmeier",
+        "venue published": "ACM UIST 2025",
+        "url": "https://programs.sigchi.org/uist/2026/program/content/262946",
+        "image": "projects/img_ftm.jpg",
+        "description": "Executing Action based on Voluntary Nervous Signals"
+    },
+    {
         "title": "VibroLink",
         "author": "Gabriela Vega and Paul Strohmeier",
         "venue published": "SpaceCHI 2025",

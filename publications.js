@@ -83,52 +83,51 @@ document.addEventListener("DOMContentLoaded", () => {
         Promise.all([projectRequest, otherProjectsRequest]).then(() => {
             const track = projectGallery.querySelector(".project-track");
             const cards = Array.from(track.querySelectorAll(".project-card"));
+            const previousButton = projectGallery.querySelector(".gallery-nav-previous");
+            const nextButton = projectGallery.querySelector(".gallery-nav-next");
+            const mobileLayout = window.matchMedia("(max-width: 900px)");
             let currentIndex = 0;
 
+            if (!cards.length) {
+                previousButton.hidden = true;
+                nextButton.hidden = true;
+                return;
+            }
+
             const wrapIndex = (index) => (index + cards.length) % cards.length;
-
-            const showProject = (index) => {
-                currentIndex = wrapIndex(index);
-                const order = [
-                    wrapIndex(currentIndex - 1),
-                    currentIndex,
-                    wrapIndex(currentIndex + 1),
-                    ...cards.map((_, cardIndex) => cardIndex)
-                        .filter((cardIndex) => ![
-                            wrapIndex(currentIndex - 1),
-                            currentIndex,
-                            wrapIndex(currentIndex + 1)
-                        ].includes(cardIndex))
-                ];
-
-                order.forEach((cardIndex) => {
-                    const card = cards[cardIndex];
-                    card.classList.toggle("is-current", cardIndex === currentIndex);
-                    track.appendChild(card);
-                });
-
-                requestAnimationFrame(() => {
-                    const currentCard = cards[currentIndex];
-                    const isVertical = window.matchMedia("(max-width: 900px)").matches;
-
-                    if (isVertical) {
-                        const centeredTop = currentCard.offsetTop - (track.clientHeight - currentCard.offsetHeight) / 2;
-                        track.scrollTo({ top: centeredTop, behavior: "smooth" });
-                    } else {
-                        const centeredLeft = currentCard.offsetLeft - (track.clientWidth - currentCard.offsetWidth) / 2;
-                        track.scrollTo({ left: centeredLeft, behavior: "smooth" });
-                    }
+            const updateGalleryLayout = () => {
+                const isList = mobileLayout.matches;
+                projectGallery.classList.toggle("is-list", isList);
+                previousButton.hidden = isList || cards.length < 2;
+                nextButton.hidden = isList || cards.length < 2;
+                cards.forEach((card, cardIndex) => {
+                    card.setAttribute("aria-hidden", String(!isList && cardIndex !== currentIndex));
                 });
             };
 
-            cards.forEach((card, cardIndex) => {
-                const image = card.querySelector(".pub-image");
-                image.addEventListener("click", () => showProject(cardIndex));
-            });
+            const showProject = (index) => {
+                currentIndex = wrapIndex(index);
+                const previousIndex = wrapIndex(currentIndex - 1);
+                const nextIndex = wrapIndex(currentIndex + 1);
 
-            if (cards.length) {
-                showProject(currentIndex);
-            }
+                cards.forEach((card, cardIndex) => {
+                    card.classList.toggle("is-current", cardIndex === currentIndex);
+                    card.classList.toggle(
+                        "is-previous",
+                        cards.length > 2 && cardIndex === previousIndex
+                    );
+                    card.classList.toggle(
+                        "is-next",
+                        cards.length > 1 && cardIndex === nextIndex
+                    );
+                });
+                updateGalleryLayout();
+            };
+
+            mobileLayout.addEventListener("change", updateGalleryLayout);
+            previousButton.addEventListener("click", () => showProject(currentIndex - 1));
+            nextButton.addEventListener("click", () => showProject(currentIndex + 1));
+            showProject(currentIndex);
         });
     }
 });
